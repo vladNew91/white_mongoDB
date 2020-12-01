@@ -1,0 +1,17 @@
+use yyy
+
+db.users.insertMany{[{'id':'1','firstName':'Igor','lastName':'Ivanov','email':'@mail.com','password':'parol'},{'id':'2','firstName':'Ivan','lastName':'Ivantsov','email':'1@mail.com','password':'parol1'},{'id':'3','firstName':'Oleg','lastName':'Petrov','email':'2@mail.com','password':'parol2'},{'id':'4','firstName':'Ilia','lastName':'Sidorov','email':'3@mail.com','password':'parol5'},{'id':'5','firstName':'Misha','lastName':'Shumaher','email':'4@mail.com','password':'parol6'}]}
+
+db.children.insertMany{[{'id':'1','firstName':'Anna','parent':'1','email':'@mail.com','password':'parol'},{'id':'2','firstName':'Ivan','parent':'1','email':'1@mail.com','password':'parol1'},{'id':'3','firstName':'Oleg','parent':'1','email':'2@mail.com','password':'parol2'},{'id':'4','firstName':'Ilia','parent':'2','email':'3@mail.com','password':'parol5'},{'id':'5','firstName':'Misha','parent':'2','email':'4@mail.com','password':'parol6'},{'id':'6','firstName':'kolya','parent':'2','email':'5@mail.com','password':'parol7'},{'id':'7','firstName':'ira','parent':'3','email':'6@mail.com','password':'parol8'},{'id':'8','firstName':'ira','parent':'3','email':'7@mail.com','password':'parol9'},{'id':'9','firstName':'lena','parent':'3','email':'8@mail.com','password':'parol10'},{'id':'10','firstName':'lena','parent':'4','email':'9@mail.com','password':'parol11'},{'id':'11','firstName':'max','parent':'4','email':'10@mail.com','password':'parol12'},{'id':'12','firstName':'Serg','parent':'4','email':'11@mail.com','password':'parol13'},{'id':'13','firstName':'Svetliy','parent':'5','email':'12@mail.com','password':'parol4'},{'id':'14','firstName':'light','parent':'5','email':'13@mail.com','password':'parol5'},{'id':'15','firstName':'bdbwghc','parent':'5','email':'14@mail.com','password':'parol6'}]}
+
+db.children.update({'email':'@mail.com'}, {$set: {'parent':'2'}})
+db.children.update({'email':'1@mail.com'}, {$set: {'parent':'2'}})
+db.children.update({'email':'2@mail.com'}, {$set: {'parent':'2'}})
+
+db.children.remove({'id':"7"}, true)
+db.children.remove({'id':"8"}, true)
+db.children.remove({'id':"9"}, true)
+db.children.remove({'id':"10"}, true)
+db.children.remove({'id':"11"}, true)
+
+db.users.remove({'id':"5"}, true)
